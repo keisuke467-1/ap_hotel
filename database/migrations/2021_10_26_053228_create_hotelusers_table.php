@@ -12,7 +12,7 @@ class CreateHotelusersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('address');
-            $table->integer('telephone number');
+            $table->string('tel');
         });
     }
 
