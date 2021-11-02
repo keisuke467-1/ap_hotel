@@ -19,6 +19,6 @@ class RegisterController extends Controller
 
     public function post(RegisterRequest $request)
     {
-        return view('form.check',['msg'=>'正しく入力されました！']);
+        return view('form.index',['msg'=>'正しく入力されました！']);
     }
 }
