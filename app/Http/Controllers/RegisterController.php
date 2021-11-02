@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
@@ -11,14 +12,13 @@ class RegisterController extends Controller
         return view('form.index',['msg'=>'フォームを入力：']);
     }
 
-    public function post(Request $request)
+    public function check(RegisterRequest $request)
     {
-        $validate_rule = [
-            'name' => 'required',
-            'mail' => 'email',
-            'tel' => '^0\d{9,10}$',
-        ];
-        $this->validate($request, $validate_rule);
-        return view('form.index',['msg'=>'正しく入力されました！']);
+        return view('form.check','data[]');
+    }
+
+    public function post(RegisterRequest $request)
+    {
+        return view('form.check',['msg'=>'正しく入力されました！']);
     }
 }

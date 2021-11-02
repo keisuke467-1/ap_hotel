@@ -5,4 +5,5 @@ Route::get('/', function () {
 });
 
 Route::get('register','RegisterController@index');
+Route::post('register','RegisterController@check');
 Route::post('register','RegisterController@post');
