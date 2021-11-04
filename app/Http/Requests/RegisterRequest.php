@@ -33,13 +33,4 @@ class RegisterRequest extends FormRequest
             'tel.digits_between' => '電話番号はハイフンなしで入力ください。',
         ];
     }
-
-    public function data()
-    {
-        return [
-            'name',
-            'mail',
-            'tel'
-        ];
-    }
 }
