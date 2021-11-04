@@ -27,6 +27,6 @@ class RegisterController extends Controller
     {
         $items = DB::select('select * from hotelusers');
         DB::insert('insert into hotelusers (name, mail, tel) values (:name, :mail, :tel)');
-        return view('form.clear',$data);
+        return view('form.clear');
     }
 }
