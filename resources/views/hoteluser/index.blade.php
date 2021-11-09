@@ -13,7 +13,7 @@
         @foreach ($items as $item)
             <tr>
                 <td>{{$item->name}}</td>
-                <td>{{$item->mail}}</td>
+                <td>{{$item->address}}</td>
                 <td>{{$item->tel}}</td>
             </tr>
         @endforeach
