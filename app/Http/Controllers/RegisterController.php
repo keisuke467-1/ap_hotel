@@ -23,4 +23,9 @@ class RegisterController extends Controller
         return view('form.check',$data,['msg'=>'これで登録しますか？']);
     }
 
+    public function clear()
+    {
+        return view('form.clear',['msg'=>'登録が完了しました']);
+    }
+
 }

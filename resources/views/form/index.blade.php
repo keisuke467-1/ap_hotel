@@ -19,8 +19,8 @@
         </div>
     @endif
     <form action="/register" method="post">
+        @csrf
         <table>
-            @csrf
             <tr><th>name: </th><td><input type="text" name="name" value="{{old('name')}}"></td></tr>
             <tr><th>mail: </th><td><input type="text" name="mail" value="{{old('mail')}}"></td></tr>
             <tr><th>tel: </th><td><input type="text" name="tel" value="{{old('age')}}"></td></tr>

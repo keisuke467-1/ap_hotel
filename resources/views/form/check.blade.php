@@ -15,6 +15,7 @@
     </table>
     <hr>
     <form action="/register/clear" method="post">
+        @csrf
         <h5>{{$msg}}</h5>
         <input type="submit" value="登録">
         <input type="hidden" name="name" value="{{old('name')}}">
