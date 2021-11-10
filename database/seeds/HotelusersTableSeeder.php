@@ -27,5 +27,7 @@ class HotelusersTableSeeder extends Seeder
             'tel' => '0120987654',
         ];
         DB::table('hotelusers')->insert($param);
+
+        //koaaaaa
     }
 }
