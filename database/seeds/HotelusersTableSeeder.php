@@ -28,6 +28,6 @@ class HotelusersTableSeeder extends Seeder
         ];
         DB::table('hotelusers')->insert($param);
 
-        //koaaaaa
+        //ee
     }
 }
