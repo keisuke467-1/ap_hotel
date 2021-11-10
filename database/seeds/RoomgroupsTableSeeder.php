@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class RoomgroupsTableSeeder extends Seeder
 {
@@ -11,6 +12,12 @@ class RoomgroupsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $param = [
+            'name' => 'taro',
+            'address' => 'taro@yamada.jp',
+            'tel' => '0120123456',
+        ];
+        DB::table('hotelusers')->insert($param);
+
     }
 }
