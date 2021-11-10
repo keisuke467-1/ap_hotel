@@ -25,7 +25,7 @@
                 <td><input type="text" name="name" value="{{old('name')}}"></td>
             </tr>
             <tr>
-                <th>mail: </th>
+                <th>address: </th>
                 <td><input type="text" name="address" value="{{old('address')}}"></td>
             </tr>
             <tr>

@@ -4,11 +4,11 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterRequest extends FormRequest
+class HoteluserRequest extends FormRequest
 {
     public function authorize()
     {
-        if ($this->path() == 'register')
+        if ($this->path() == 'hoteluser/add')
         {
             return true;
         } else {

@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    <p>{{$msg}}</p>
+    <p>やったぜ</p>
 @endsection
 
 @section('footer')
