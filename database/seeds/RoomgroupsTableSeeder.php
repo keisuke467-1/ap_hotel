@@ -13,11 +13,21 @@ class RoomgroupsTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'name' => 'taro',
-            'address' => 'taro@yamada.jp',
-            'tel' => '0120123456',
+            'name' => '和室（松）',
+            'max_capacity' => '6',
         ];
-        DB::table('hotelusers')->insert($param);
+        DB::table('roomgroups')->insert($param);
+        
+        $param = [
+            'name' => '和室（竹）',
+            'max_capacity' => '5',
+        ];
+        DB::table('roomgroups')->insert($param);
 
+        $param = [
+            'name' => '和室（梅）',
+            'max_capacity' => '4',
+        ];
+        DB::table('roomgroups')->insert($param);
     }
 }

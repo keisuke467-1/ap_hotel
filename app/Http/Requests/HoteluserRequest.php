@@ -20,7 +20,7 @@ class HoteluserRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'mail' => 'email',
+            'address' => 'email',
             'tel' => 'digits_between:8,11',
         ];
     }
@@ -29,8 +29,8 @@ class HoteluserRequest extends FormRequest
     {
         return [
             'name.required' => '名前は必ず入力してください。',
-            'mail.email' => 'メールアドレスが必要です。',
-            'tel.digits_between' => '電話番号はハイフンなしで入力ください。',
+            'address.email' => 'メールアドレスが必要です。',
+            'tel.digits_between' => '電話番号はハイフンなしで8桁または11桁で入力してください。',
         ];
     }
 }

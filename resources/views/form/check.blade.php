@@ -1,6 +1,6 @@
 @extends('layouts.register')
 
-@section('title','登録')
+@section('title','form.check')
 
 @section('menubar')
     @parent
@@ -9,9 +9,9 @@
 
 @section('content')
     <table>
-        <tr><th>名前:</th><td>{{$name}}</td></tr>
-        <tr><th>アドレス:</th><td>{{$address}}</td></tr>
-        <tr><th>電話番号:</th><td>{{$tel}}</td></tr>
+        <tr><th>name:</th><td>{{$name}}</td></tr>
+        <tr><th>address:</th><td>{{$address}}</td></tr>
+        <tr><th>tel:</th><td>{{$tel}}</td></tr>
     </table>
     <hr>
     <form action="/hoteluser/create" method="post">
@@ -27,3 +27,5 @@
 @section('footer')
     copyright 2021 okeke
 @endsection
+
+{{-- 使ってるなぁ② --}}

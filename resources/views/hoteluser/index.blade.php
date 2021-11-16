@@ -4,22 +4,23 @@
 
 @section('menubar')
     @parent
-    【ホテル利用者新規登録画面】
+    【ログインフォーム】
 @endsection
 
 @section('content')
+{{-- <form action="ここやで" method="post"> --}}
+    @csrf
     <table>
-        <tr><th>Name</th><th>Mail</th><th>tel</th></tr>
-        @foreach ($items as $item)
-            <tr>
-                <td>{{$item->name}}</td>
-                <td>{{$item->address}}</td>
-                <td>{{$item->tel}}</td>
-            </tr>
-        @endforeach
+        <tr><th>name: </th><td><input type="text" name="name" value="{{old('name')}}"></td></tr>
+        <tr><th>mail: </th><td><input type="text" name="address" value="{{old('address')}}"></td></tr>
+        <tr><th>tel: </th><td><input type="text" name="tel" value="{{old('age')}}"></td></tr>
+        <tr><th></th><td><input type="submit" value="check"></td></tr>
     </table>
+</form>
 @endsection
 
 @section('footer')
     copyright 2021 okeke
 @endsection
+
+{{-- 使ってる --}}

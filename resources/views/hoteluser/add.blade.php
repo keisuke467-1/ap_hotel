@@ -42,3 +42,5 @@
 @section('footer')
     copyright 2021 okeke
 @endsection
+
+{{-- こっからやわ --}}

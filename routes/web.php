@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RoomgroupController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -14,3 +16,5 @@ Route::get('hoteluser','HoteluserController@showindex');
 Route::get('hoteluser/add','HoteluserController@add');
 
 Route::post('hoteluser/add','HoteluserController@check');
+
+Route::get('roomsearch','RoomgroupController@index');
