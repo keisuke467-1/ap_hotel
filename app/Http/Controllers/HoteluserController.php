@@ -41,5 +41,9 @@ class HoteluserController extends Controller
         return view('form.check',$data);
     }
 
-
+    public function allusers()
+    {
+        $items = Hoteluser::all();
+        return view('hoteluser.alluser',['items' => $items]);
+    }
 }

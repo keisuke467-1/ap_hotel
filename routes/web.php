@@ -6,15 +6,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('register','RegisterController@index');
-// Route::post('register','RegisterController@check');
+// getはデータを取得するとき　postはデータを送る時
 
-Route::post('hoteluser/create','HoteluserController@create');
+Route::post('hoteluser/create','HoteluserController@create');//③
 
 Route::get('hoteluser','HoteluserController@showindex');
 
-Route::get('hoteluser/add','HoteluserController@add');
+Route::get('hoteluser/add','HoteluserController@add');//①
 
-Route::post('hoteluser/add','HoteluserController@check');
+Route::post('hoteluser/add','HoteluserController@check');//②
 
 Route::get('roomsearch','RoomgroupController@index');
+
+Route::get('alluser','HoteluserController@allusers');
+
+Route::get('reserve','ReserveController@index');
