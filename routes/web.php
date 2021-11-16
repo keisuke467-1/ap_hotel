@@ -21,3 +21,5 @@ Route::get('roomsearch','RoomgroupController@index');
 Route::get('alluser','HoteluserController@allusers');
 
 Route::get('reserve','ReserveController@index');
+
+Route::get('room','RoomController@index');
