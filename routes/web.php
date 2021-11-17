@@ -23,3 +23,7 @@ Route::get('alluser','HoteluserController@allusers');
 Route::get('reserve','ReserveController@index');
 
 Route::get('room','RoomController@index');
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

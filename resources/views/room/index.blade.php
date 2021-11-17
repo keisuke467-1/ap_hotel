@@ -9,7 +9,7 @@
 
 @section('content')
     <table>
-        <tr><th>予約ID</th><th>利用者ID</th><th>お名前</th><th>アドレス</th><th>電話番号</th><th>人数</th><th>チェックイン</th><th>チェックアウト</th><th></th></tr>
+        <tr><th>　</th><th>部屋種ID</th><th>部屋の種類</th><th>部屋番号</th><th>宿泊可能人数</th></tr>
         <div>
             <ul>
                 @foreach ($items as $item)
@@ -17,8 +17,8 @@
                         <td>{{$item->id}}</td>
                         <td>{{$item->roomgroups_id}}</td>
                         <td>{{$item->roomgroup->name}}</td>
-                        <td>{{$item->roomgroup->max_capacity}}</td>
                         <td>{{$item->room_numbers}}</td>
+                        <td>{{$item->roomgroup->max_capacity}}人</td>
                     </tr>
                 @endforeach
             </ul>
