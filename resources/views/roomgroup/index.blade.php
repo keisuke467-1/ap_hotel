@@ -9,11 +9,12 @@
 
 @section('content')
     <table>
-        <tr><th>部屋の種類</th><th>宿泊可能人数</th></tr>
+        <tr><th>ID</th><th>部屋の種類</th><th>最大宿泊可能人数</th></tr>
         <div>
             <ul>
                 @foreach ($items as $item)
                     <tr>
+                        <td>{{$item->id}}</td>
                         <td>{{$item->name}}</td>
                         <td>{{$item->max_capacity}}人</td>
                     </tr>
@@ -22,27 +23,27 @@
         </div>
     </table>
     <hr>
-    <form action="/roomsearch/find" methods="post">
+    <form action="room" methods="post">
         <table>
             @csrf
             <tr>
-                <th>チェックイン </th>
-                <td><input type="date" name="check_in" value="{{old('check_in')}}"></td>
-            </tr>
-            <tr>
-                <th>チェックアウト </th>
-                <td><input type="date" name="check_out" value="{{old('check_out')}}"></td>
-            </tr>
-            <tr>
-                <th>部屋の種類 </th>
+                <th>ID(部屋の種類)</th>
                 <td><input type="text" name="roomgroup" value="{{old('roomgroup')}}"></td>
             </tr>
             <tr>
-                <th>部屋数</th>
+                <th>宿泊人数</th>
                 <td><input type="text" name="rooms" value="{{old('rooms')}}"></td>
+                <tr>
+                    <th>チェックイン </th>
+                    <td><input type="date" name="check_in" value="{{old('check_in')}}"></td>
+                </tr>
+                <tr>
+                    <th>チェックアウト </th>
+                    <td><input type="date" name="check_out" value="{{old('check_out')}}"></td>
+                </tr>
             </tr>
             <tr>
-                <th></th><td><input type="submit" value="検索"></td>
+                <th></th><td><input type="submit" value="空き状況を検索"></td>
             </tr>
         </table>
 @endsection

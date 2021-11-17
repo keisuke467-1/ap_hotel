@@ -17,6 +17,7 @@ Route::get('hoteluser/add','HoteluserController@add');//①
 Route::post('hoteluser/add','HoteluserController@check');//②
 
 Route::get('roomsearch','RoomgroupController@index');
+Route::post('roomsearch','RoomgroupController@index');
 
 Route::get('alluser','HoteluserController@allusers');
 

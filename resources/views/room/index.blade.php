@@ -9,13 +9,13 @@
 
 @section('content')
     <table>
-        <tr><th>　</th><th>部屋種ID</th><th>部屋の種類</th><th>部屋番号</th><th>宿泊可能人数</th></tr>
+        <tr><th>ID</th><th>部屋の種類</th><th>部屋番号</th><th>宿泊可能人数</th></tr>
         <div>
             <ul>
                 @foreach ($items as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td>{{$item->roomgroups_id}}</td>
+                        {{-- <td>{{$item->roomgroups_id}}</td> --}}
                         <td>{{$item->roomgroup->name}}</td>
                         <td>{{$item->room_numbers}}</td>
                         <td>{{$item->roomgroup->max_capacity}}人</td>
