@@ -24,6 +24,7 @@ Route::get('alluser','HoteluserController@allusers');
 Route::get('reserve','ReserveController@index');
 
 Route::get('room','RoomController@index');
+Route::post('room','RoomController@index');
 
 // Auth::routes();
 

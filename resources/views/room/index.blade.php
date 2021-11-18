@@ -14,8 +14,8 @@
             <ul>
                 @foreach ($items as $item)
                     <tr>
-                        <td>{{$item->id}}</td>
-                        {{-- <td>{{$item->roomgroups_id}}</td> --}}
+                        {{-- <td>{{$item->id}}</td> --}}
+                        <td>{{$item->roomgroups_id}}</td>
                         <td>{{$item->roomgroup->name}}</td>
                         <td>{{$item->room_numbers}}</td>
                         <td>{{$item->roomgroup->max_capacity}}人</td>
@@ -24,6 +24,13 @@
             </ul>
         </div>
     </table>
+    <hr>
+    <table>
+        <tr><th>ID</th><td>{{$roomgroup}}</td></tr>
+        <tr><th>宿泊人数</th><td>{{$rooms}}人</td></tr>
+        <tr><th>チェックイン</th><td>{{$check_in}}</td></tr>
+        <tr><th>チェックアウト</th><td>{{$check_out}}</td></tr>
+    </table>        
 @endsection
 
 @section('footer')

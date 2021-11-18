@@ -27,12 +27,12 @@
         <table>
             @csrf
             <tr>
-                <th>ID(部屋の種類)</th>
+                <th>ID</th>
                 <td><input type="text" name="roomgroup" value="{{old('roomgroup')}}"></td>
             </tr>
             <tr>
                 <th>宿泊人数</th>
-                <td><input type="text" name="rooms" value="{{old('rooms')}}"></td>
+                <td><input type="text" name="rooms" value="{{old('rooms')}}">人</td>
                 <tr>
                     <th>チェックイン </th>
                     <td><input type="date" name="check_in" value="{{old('check_in')}}"></td>
