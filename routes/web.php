@@ -26,6 +26,9 @@ Route::get('reserve','ReserveController@index');
 Route::get('room','RoomController@index');
 Route::post('room','RoomController@index');
 
+Route::get('room_select','RoomController@room_select');
+Route::post('room_select','RoomController@room_select');
+
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');

@@ -16,8 +16,14 @@ class RoomController extends Controller
             'check_in' => $request->check_in,
             'check_out'=> $request->check_out
         ];
-        $items = Room::all();
+        $items = Room::where('roomgroups_id',$request->roomgroup)->get();
         return view('room.index',['items' => $items],$data);
+    }
+
+    public function room_select(Request $request)
+    {
+        $items = Room::where('room_numbers',$request->room_number)->get();
+        return view('room.room_select',['items' => $items]);
     }
 }
 

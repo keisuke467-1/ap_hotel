@@ -25,12 +25,23 @@
         </div>
     </table>
     <hr>
-    <table>
+    <form action="room_select" method="post">
+        <table>
+            <tr>
+                <th>部屋番号を選択</th>
+                <td><input type="text" name="room_number" value="{{old('room_number')}}"></td>
+            </tr>
+            <tr>
+                <th></th><td><input type="submit" value="送信"></td>
+            </tr>
+        </table>
+    </form>
+    {{-- <table>
         <tr><th>ID</th><td>{{$roomgroup}}</td></tr>
         <tr><th>宿泊人数</th><td>{{$rooms}}人</td></tr>
         <tr><th>チェックイン</th><td>{{$check_in}}</td></tr>
         <tr><th>チェックアウト</th><td>{{$check_out}}</td></tr>
-    </table>        
+    </table>         --}}
 @endsection
 
 @section('footer')

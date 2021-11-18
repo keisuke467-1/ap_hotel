@@ -9,7 +9,7 @@
 
 @section('content')
     <table>
-        <tr><th>ID</th><th>氏名</th><th>メールアドレス</th><th>電話番号</th></tr>
+        <tr><th>ID</th><th>氏名</th><th>住所</th><th>電話番号</th></tr>
         <div>
             <ul>
                 @foreach ($items as $item)
