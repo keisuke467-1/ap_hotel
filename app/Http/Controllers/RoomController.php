@@ -25,6 +25,8 @@ class RoomController extends Controller
         $items = Room::where('room_numbers',$request->room_number)->get();
         return view('room.room_select',['items' => $items]);
     }
+
+    // public function room
 }
 
 

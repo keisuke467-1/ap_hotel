@@ -14,8 +14,8 @@
             <ul>
                 @foreach ($items as $item)
                     <tr>
-                        {{-- <td>{{$item->id}}</td> --}}
-                        <td>{{$item->roomgroups_id}}</td>
+                        <td>{{$item->id}}</td>
+                        {{-- <td>{{$item->roomgroups_id}}</td> --}}
                         <td>{{$item->roomgroup->name}}</td>
                         <td>{{$item->room_numbers}}</td>
                         <td>{{$item->roomgroup->max_capacity}}人</td>
@@ -27,6 +27,7 @@
     <hr>
     <form action="room_select" method="post">
         <table>
+            @csrf
             <tr>
                 <th>部屋番号を選択</th>
                 <td><input type="text" name="room_number" value="{{old('room_number')}}"></td>

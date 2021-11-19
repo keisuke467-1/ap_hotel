@@ -9,8 +9,16 @@
 
 @section('content')
     <table>
-        <tr><th>ID</th><td>{{$room_number}}</td></tr>
-    </table>
+        @foreach ($items as $item)
+        <tr>
+            <td>{{$item->id}}</td>
+            {{-- <td>{{$item->roomgroups_id}}</td> --}}
+            <td>{{$item->roomgroup->name}}</td>
+            <td>{{$item->room_numbers}}</td>
+            <td>{{$item->roomgroup->max_capacity}}人</td>
+        </tr>
+    @endforeach
+</table>
 @endsection
 
 @section('footer')
