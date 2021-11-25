@@ -20,4 +20,6 @@ class room extends Model
     {
         return $this->belongsToMany('App\Reserve','reserve_room','room_id','reserve_id');
     }
+
+    //スコープで人数に合う部屋をroomgroupから持ってくる
 }
