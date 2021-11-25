@@ -22,4 +22,10 @@ class room extends Model
     }
 
     //スコープで人数に合う部屋をroomgroupから持ってくる
+    public function scopeSearchCapacity($query, $capacity)
+    {
+        $room_group = Roomgroup::where('max_capacity',$capacity->input)->pluck('room_numbers');
+        $param = ['input' => $capacity->input, 'item' => $item];
+        return view('room.index', $param);
+    }
 }
