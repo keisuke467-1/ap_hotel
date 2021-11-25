@@ -16,5 +16,8 @@ class room extends Model
         return $this->belongsTo('App\Roomgroup','roomgroups_id');
     }
 
-
+    public function reserves()
+    {
+        return $this->belongsToMany('App\Reserve','reserve_room','room_id','reserve_id');
+    }
 }

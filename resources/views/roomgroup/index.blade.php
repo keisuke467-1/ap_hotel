@@ -28,7 +28,11 @@
             @csrf
             <tr>
                 <th>ID</th>
-                <td><input type="text" name="roomgroup" value="{{old('roomgroup')}}"></td>
+                <td><select name="roomgroup" id="select_num">
+                    <option value="1" selected="selected">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select></td>
             </tr>
             <tr>
                 <th>宿泊人数</th>
