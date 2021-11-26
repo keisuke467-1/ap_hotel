@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Roomgroup;
 
 class room extends Model
 {
@@ -22,10 +23,17 @@ class room extends Model
     }
 
     //スコープで人数に合う部屋をroomgroupから持ってくる
+    //pluckの部分、何が欲しいか再考
     public function scopeSearchCapacity($query, $capacity)
     {
-        $room_group = Roomgroup::where('max_capacity',$capacity->input)->pluck('room_numbers');
-        $param = ['input' => $capacity->input, 'item' => $item];
-        return view('room.index', $param);
+        $room_group = Roomgroup::where('max_capacity', '>=' ,$capacity)->pluck('id');
+        return $query->whereIn('roomgroups_id',$room_group);
+    }
+
+    //
+    public function scopeSearchDays($query, $days)
+    {
+        $room_group = Reserve::where('', '>=' ,$days)->pluck('id');
+        return $query->whereIn('roomgroups_id',$room_group);
     }
 }

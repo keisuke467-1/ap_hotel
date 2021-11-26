@@ -16,10 +16,11 @@ class RoomController extends Controller
             'check_in' => $request->check_in,
             'check_out'=> $request->check_out
         ];
-        //Roomモデルを使って送られてきた部屋種IDと一致する部屋のデータを取得する
-        // $items = Room::where('roomgroups_id',$request->roomgroup)->get();
-        //部屋種が一致しててかつ、人数の条件があっててかつ、チェックインチェックアウトが被ってない部屋のデータを取得する
-        // return view('room.index',['items' => $items],$data);
+        // Roomモデルを使って、送られてきた人数の条件があっててかつ部屋種IDと一致する部屋のデータを取得する
+        $items = Room::SearchCapacity($request->rooms)->where('roomgroups_id',$request->roomgroup)->get();
+        // Reserveモデルを使って、チェックインチェックアウトが被ってない部屋のIDを取得する
+        $days = Room::SearchDays($request->check_in,$request->check_out)->pluck('room_id');
+        return view('room.index',['items' => $items],$data);
     }
 
     public function room_select(Request $request)
