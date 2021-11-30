@@ -9,9 +9,9 @@
 
 @section('content')
     <p>登録が完了しました。</p>
-    <form action="/roomsearch">
-        <input type="submit" value="ログインして予約画面へ">
-    </form>
+    <a href="/roomsearch">
+        部屋検索
+    </a>
 @endsection
 
 @section('footer')

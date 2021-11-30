@@ -23,7 +23,7 @@
         </div>
     </table>
     <hr>
-    <form action="room" methods="post">
+    <form action="/room" methods="post">
         <table>
             @csrf
             <tr>
@@ -36,7 +36,14 @@
             </tr>
             <tr>
                 <th>宿泊人数</th>
-                <td><input type="text" name="rooms" value="{{old('rooms')}}">人</td>
+                <td><select name="rooms" id="select_num">
+                    <option value="1" selected="selected">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select></td>
                 <tr>
                     <th>チェックイン </th>
                     <td><input type="date" name="check_in" value="{{old('check_in')}}"></td>

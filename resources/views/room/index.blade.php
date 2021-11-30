@@ -25,12 +25,20 @@
         </div>
     </table>
     <hr>
-    <form action="room_select" method="post">
+    <form action="/room_select" method="post">
         <table>
             @csrf
             <tr>
                 <th>部屋番号を選択</th>
-                <td><input type="text" name="room_number" value="{{old('room_number')}}"></td>
+                <td><select name="room_number" id="select_num">
+                    <option value="101" selected="selected">101</option>
+                    <option value="102">102</option>
+                    <option value="201">201</option>
+                    <option value="202">202</option>
+                    <option value="301">301</option>
+                    <option value="302">302</option>
+                    <option value="303">303</option>
+                </select></td>
             </tr>
             <tr>
                 <th></th><td><input type="submit" value="送信"></td>

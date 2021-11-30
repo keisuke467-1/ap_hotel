@@ -18,5 +18,20 @@ class Reserve extends Model
         return $this->belongsToMany('App\Room','reserve_room','reserve_id','room_id')->withPivot('room_numbers');
     }
 
-    //スコープで人数に合う部屋をroomgroupから持ってくる
+    //
+    public function scopeSearchCheckin($query, $check_in)
+    {
+        return $query->where('check_in', '<=', $check_in)->
+        where('check_out', '>=', $check_in);
+    }
+    public function scopeSearchCheckout($query, $check_out)
+    {
+        return $query->where('check_in', '<=', $check_out)->
+        where('check_out', '>=', $check_out);
+    }
+
+    public function scopeSearchCheckReserve($query,$check_in,$check_out)
+    {
+        return $query->where('check_in','<=',$check_in)->where('check_out','>=',$check_out);
+    }
 }

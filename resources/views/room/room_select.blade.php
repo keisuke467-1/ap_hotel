@@ -4,7 +4,7 @@
 
 @section('menubar')
     @parent
-    【選択された部屋】
+    【予約確認画面】
 @endsection
 
 @section('content')

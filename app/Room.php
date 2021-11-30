@@ -22,18 +22,23 @@ class room extends Model
         return $this->belongsToMany('App\Reserve','reserve_room','room_id','reserve_id');
     }
 
-    //スコープで人数に合う部屋をroomgroupから持ってくる
-    //pluckの部分、何が欲しいか再考
+    //RoomControllerから渡された引数を$capacityで受け取って、
+    //Roomgroupモデル（テーブル）から$capacityが
+    //'max_capacity'（カラム名）以下である
+    //'id'を抽出したものを$room_groupに代入する。
+
+    // pluck('id')で検索結果から[idカラム]の値をリストで取得
     public function scopeSearchCapacity($query, $capacity)
     {
         $room_group = Roomgroup::where('max_capacity', '>=' ,$capacity)->pluck('id');
+
+        // whereInでリスト化された[id]と合うレコードを複数返す
         return $query->whereIn('roomgroups_id',$room_group);
     }
 
     //
-    public function scopeSearchDays($query, $days)
+    public function scopeSearchGroup($query, $group)
     {
-        $room_group = Reserve::where('', '>=' ,$days)->pluck('id');
-        return $query->whereIn('roomgroups_id',$room_group);
+        return $query->whereIn('roomgroups_id',1);
     }
 }
