@@ -43,6 +43,8 @@
             <tr>
                 <th></th><td><input type="submit" value="送信"></td>
             </tr>
+            <hr>
+            部屋番号の選択肢を絞らな、好きな部屋表示できてしまってる
         </table>
     </form>
     {{-- <table>
