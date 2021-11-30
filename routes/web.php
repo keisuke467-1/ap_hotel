@@ -30,6 +30,7 @@ Route::post('room','RoomController@index');
 Route::post('room_select','RoomController@room_select');
 Route::get('room_select','RoomController@room_select');
 
-// Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
