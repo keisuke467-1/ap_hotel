@@ -86,8 +86,7 @@
 
                 <div class="links">
                     <a href="/hoteluser/add">新規登録</a>
-                    <a href="http://127.0.0.1:8000/hoteluser/add">ログイン</a>
-                    {{-- <a href="http://127.0.0.1:8000/hoteluser/add">ログイン</a> --}}
+                    <a href="/hoteluser/login">ログイン</a>
                 </div>
             </div>
         </div>

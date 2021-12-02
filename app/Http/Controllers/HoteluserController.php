@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Hoteluser;
+use App\Roomgroup;
 use App\Http\Requests\HoteluserRequest;
 
 
@@ -45,5 +46,35 @@ class HoteluserController extends Controller
     {
         $items = Hoteluser::all();
         return view('hoteluser.alluser',['items' => $items]);
+    }
+
+    public function login()
+    {
+        return view('hoteluser.login');
+    }
+
+    //送られてきた個人情報とhotelusersテーブルの内容と
+    //一致するか確認して、あってたら【空き部屋照会】にとぶ
+
+    public function login_check(HoteluserRequest $request)
+    {
+                //送られてきた個人情報
+        // $data = [
+        //     'name' => $request->name,
+        //     'address' => $request->address,
+        //     'tel' => $request->tel,
+        // ];
+
+
+
+        $login_login = Hoteluser::where('name',$request->name)->where('address',$request->address)->where('tel',$request->tel)->get();
+
+        if (isset($login_login)){
+            $items = Roomgroup::all();
+            return view('hoteluser.index',['items' => $items]);
+        }else{
+            redirect()->route('login_check');
+        }
+
     }
 }

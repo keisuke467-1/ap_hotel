@@ -8,12 +8,14 @@ class HoteluserRequest extends FormRequest
 {
     public function authorize()
     {
-        if ($this->path() == 'hoteluser/add')
-        {
-            return true;
-        } else {
-            return false;
-        }
+        // if ($this->path() == 'hoteluser/add')
+        // {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+
+        return true;
     }
 
     public function rules()
