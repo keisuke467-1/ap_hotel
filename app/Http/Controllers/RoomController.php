@@ -50,7 +50,9 @@ class RoomController extends Controller
 
     public function room_select(Request $request)
     {
-        $items = Room::where('room_numbers', $request->room_number)->get();
+        //'room_number'のところに、上の$rooms_testをいれたいけど。。
+        //要するに空いてる部屋のroom_numbersと比べたい
+        $items = Room::where('room_numbers', $request->room_numbers)->get();
         return view('room.room_select', ['items' => $items]);
     }
 

@@ -8,7 +8,10 @@
 @endsection
 
 @section('content')
+IDじゃなくて'hoteluser'の'name'と
+宿泊人数(rooms)と'check_in''check_out'がほしいよね
     <table>
+        <tr><th>ID</th><th>部屋の種類</th><th>部屋番号</th><th>宿泊人数</th></tr>
         @foreach ($items as $item)
         <tr>
             <td>{{$item->id}}</td>

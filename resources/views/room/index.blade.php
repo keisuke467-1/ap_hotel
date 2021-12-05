@@ -30,7 +30,7 @@
             @csrf
             <tr>
                 <th>部屋番号を選択</th>
-                <td><select name="room_number" id="select_num">
+                <td><select name="room_numbers" id="select_num">
                     <option value="101" selected="selected">101</option>
                     <option value="102">102</option>
                     <option value="201">201</option>

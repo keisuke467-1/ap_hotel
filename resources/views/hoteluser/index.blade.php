@@ -4,19 +4,18 @@
 
 @section('menubar')
     @parent
-    【ログインフォーム】
+    【ログイン成功】
 @endsection
 
 @section('content')
-{{-- <form action="ここやで" method="post"> --}}
-    @csrf
-    <table>
-        <tr><th>name: </th><td><input type="text" name="name" value="{{old('name')}}"></td></tr>
-        <tr><th>mail: </th><td><input type="text" name="address" value="{{old('address')}}"></td></tr>
-        <tr><th>tel: </th><td><input type="text" name="tel" value="{{old('age')}}"></td></tr>
-        <tr><th></th><td><input type="submit" value="check"></td></tr>
-    </table>
-</form>
+    <p>ログインが完了しました。</p>
+    <a href="/roomsearch">
+        部屋検索
+    </a>
+    <br>
+    <a href="/reserve">
+        予約確認
+    </a>
 @endsection
 
 @section('footer')
