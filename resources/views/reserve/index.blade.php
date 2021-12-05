@@ -9,7 +9,7 @@
 
 @section('content')
     <table>
-        <tr><th>予約ID</th><th>利用者ID</th><th>お名前</th><th>アドレス</th><th>電話番号</th><th>人数</th><th>チェックイン</th><th>チェックアウト</th><th></th></tr>
+        <tr><th>予約ID</th><th>利用者ID</th><th>お名前</th><th>アドレス</th><th>電話番号</th><th>宿泊人数</th><th>チェックイン</th><th>チェックアウト</th><th></th></tr>
         <div>
             <ul>
                 @foreach ($items as $item)
