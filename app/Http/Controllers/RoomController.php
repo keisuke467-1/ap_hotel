@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Room;
 use App\Reserve;
+use App\Roomgroup;
 
 class RoomController extends Controller
 {
@@ -44,17 +45,25 @@ class RoomController extends Controller
 
         $rooms_test = Room::whereNotIn('room_numbers', $rooms_data)->SearchCapacity($request->rooms)->where('roomgroups_id', $request->roomgroup)->get();
 
+        $room_name = Roomgroup::where('id',$request->roomgroup)->value('name');
+
+        //リクエスト（$request）からsessionを使って、値を保持する
+        $request->session()->put('roomgroup_name',$room_name);
+        $request->session()->put('number_of_people',$request->rooms);
+        $request->session()->put('check_in',$request->check_in);
+        $request->session()->put('check_out',$request->check_out);
+
 
         return view('room.index', ['items' => $rooms_test], $data);
     }
 
     public function room_select(Request $request)
     {
-        //'room_number'のところに、上の$rooms_testをいれたいけど。。
-        //要するに空いてる部屋のroom_numbersと比べたい
         $items = Room::where('room_numbers', $request->room_numbers)->get();
+
+        $request->session()->put('room_numbers',$request->room_numbers);
+
         return view('room.room_select', ['items' => $items]);
     }
 
-    // public function room
 }

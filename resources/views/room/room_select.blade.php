@@ -8,17 +8,16 @@
 @endsection
 
 @section('content')
-IDじゃなくて'hoteluser'の'name'と
-宿泊人数(rooms)と'check_in''check_out'がほしいよね
     <table>
-        <tr><th>ID</th><th>部屋の種類</th><th>部屋番号</th><th>宿泊人数</th></tr>
+        <tr><th>部屋の種類</th><th>部屋番号</th><th>宿泊人数</th><th>チェックイン</th><th>チェックアウト</th></tr>
         @foreach ($items as $item)
         <tr>
-            <td>{{$item->id}}</td>
-            {{-- <td>{{$item->roomgroups_id}}</td> --}}
-            <td>{{$item->roomgroup->name}}</td>
-            <td>{{$item->room_numbers}}</td>
-            <td>{{$item->roomgroup->max_capacity}}人</td>
+            <td>{{Session::get('roomgroup_name')}}</td>
+            <td>{{Session::get('room_numbers')}}</td>
+            {{-- Roomコントローラーでsessionに入れたのを取り出してる --}}
+            <td>{{Session::get('number_of_people')}}人</td>
+            <td>{{Session::get('check_in')}}</td>
+            <td>{{Session::get('check_out')}}</td>
         </tr>
     @endforeach
 </table>

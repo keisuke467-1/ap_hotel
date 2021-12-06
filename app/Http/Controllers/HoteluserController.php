@@ -71,6 +71,9 @@ class HoteluserController extends Controller
 
         if (isset($login_login)){
             $items = Roomgroup::all();
+            $request->session()->put('name',$request->name);
+            $request->session()->put('address',$request->address);
+            $request->session()->put('tel',$request->tel);
             return view('hoteluser.index',['items' => $items]);
         }else{
             redirect()->route('login_check');

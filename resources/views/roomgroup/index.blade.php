@@ -16,7 +16,7 @@
                     <tr>
                         <td>{{$item->id}}</td>
                         <td>{{$item->name}}</td>
-                        <td>{{$item->max_capacity}}人</td>
+                        <td>{{$item->max_capacity}}人まで</td>
                     </tr>
                 @endforeach
             </ul>

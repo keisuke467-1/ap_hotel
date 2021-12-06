@@ -5,11 +5,20 @@
 @section('menubar')
     @parent
     【ログインフォーム】
-    エラーメッセージ出せるようにする
 @endsection
 
 
 @section('content')
+    @if (count($errors) > 0)
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <form action="/hoteluser/login_check" method="post">
         @csrf
         <table>

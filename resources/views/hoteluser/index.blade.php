@@ -4,11 +4,13 @@
 
 @section('menubar')
     @parent
-    【ログイン成功】
+    【ログイン成功】<br>
+    <p>【{{Session::get('name')}}】様ようこそ</p>
 @endsection
 
 @section('content')
-    <p>ログインが完了しました。</p>
+    <p>ログインが完了しました。<br>
+    予約確認でhoteluserのIDを保持していきまひょか</p>
     <a href="/roomsearch">
         部屋検索
     </a>
@@ -16,6 +18,7 @@
     <a href="/reserve">
         予約確認
     </a>
+    
 @endsection
 
 @section('footer')

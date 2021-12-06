@@ -5,6 +5,7 @@
 @section('menubar')
     @parent
     【予約一覧】
+    〇〇様の予約状況みたいな
 @endsection
 
 @section('content')

@@ -8,13 +8,6 @@ class HoteluserRequest extends FormRequest
 {
     public function authorize()
     {
-        // if ($this->path() == 'hoteluser/add')
-        // {
-        //     return true;
-        // } else {
-        //     return false;
-        // }
-
         return true;
     }
 
@@ -31,7 +24,7 @@ class HoteluserRequest extends FormRequest
     {
         return [
             'name.required' => '名前は必ず入力してください。',
-            'address.email' => '住所は必ず入力してください。',
+            'address.required' => '住所は必ず入力してください。',
             'tel.digits_between' => '電話番号はハイフンなしで8桁または11桁で入力してください。',
         ];
     }

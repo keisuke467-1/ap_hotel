@@ -18,7 +18,7 @@
                         {{-- <td>{{$item->roomgroups_id}}</td> --}}
                         <td>{{$item->roomgroup->name}}</td>
                         <td>{{$item->room_numbers}}</td>
-                        <td>{{$item->roomgroup->max_capacity}}人</td>
+                        <td>{{$item->roomgroup->max_capacity}}人まで</td>
                     </tr>
                 @endforeach
             </ul>
@@ -31,20 +31,15 @@
             <tr>
                 <th>部屋番号を選択</th>
                 <td><select name="room_numbers" id="select_num">
-                    <option value="101" selected="selected">101</option>
-                    <option value="102">102</option>
-                    <option value="201">201</option>
-                    <option value="202">202</option>
-                    <option value="301">301</option>
-                    <option value="302">302</option>
-                    <option value="303">303</option>
+                    {{-- foreachで$items（部屋検索の結果）からroom_numbers（部屋番号）を出してる--}}
+                    @foreach ($items as $item)
+                        <option value={{$item->room_numbers}}>{{$item->room_numbers}}</option>
+                    @endforeach
                 </select></td>
             </tr>
             <tr>
                 <th></th><td><input type="submit" value="送信"></td>
             </tr>
-            <hr>
-            部屋番号の選択肢を絞らな、好きな部屋表示できてしまってる
         </table>
     </form>
     {{-- <table>
