@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\RoomgroupController;
 
 Route::get('/', function () {
@@ -40,3 +41,5 @@ Route::get('hoteluser/login_check','HoteluserController@login_check')->name('log
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/reserve/clear','ReserveController@clear');

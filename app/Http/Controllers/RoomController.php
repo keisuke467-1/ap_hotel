@@ -13,11 +13,14 @@ class RoomController extends Controller
     public function index(Request $request)
     {
         $data = [
-            'roomgroup' => $request->roomgroup,
-            'rooms' => $request->rooms,
-            'check_in' => $request->check_in,
-            'check_out' => $request->check_out
+            'roomgroup' => $request->roomgroup,//部屋の種類のID
+            'rooms' => $request->rooms,//宿泊人数
+            'check_in' => $request->check_in,//チェックイン
+            'check_out' => $request->check_out//チェックアウト
         ];
+        
+        //次のbladeに予約の入ってない部屋のレコードを表示して
+        //選択してもらうために、段階を踏んで取得していく
 
         // 空の配列
         $rooms_data = array();

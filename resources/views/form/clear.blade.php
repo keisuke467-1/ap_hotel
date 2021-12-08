@@ -9,8 +9,8 @@
 
 @section('content')
     <p>登録が完了しました。</p>
-    <a href="/roomsearch">
-        部屋検索
+    <a href="/hoteluser/login">
+        ログイン
     </a>
 @endsection
 

@@ -18,7 +18,12 @@ class Reserve extends Model
         return $this->belongsToMany('App\Room','reserve_room','reserve_id','room_id')->withPivot('room_numbers');
     }
 
-    //
+    //RoomControllerのindex()で定義されていて
+    //SearchCheckinスコープに、入力されたチェックイン情報を引数で受け取ってる。
+    //$query（このモデル（Reserve）？）で
+    //'check_in'カラムが$check_in引数より小さい、かつ
+    //'check_out'カラムが$check_in引数より大きい
+    //↑これにあてはまったやつを返す
     public function scopeSearchCheckin($query, $check_in)
     {
         return $query->where('check_in', '<=', $check_in)->

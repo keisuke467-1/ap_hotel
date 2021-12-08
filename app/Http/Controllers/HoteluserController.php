@@ -23,6 +23,7 @@ class HoteluserController extends Controller
 
     public function create(Request $request)
     {
+        //送られてきた個人情報をデータベースにいれてる
         $hoteluser = new Hoteluser;
         $form = $request->all();
         unset($form['_token']);
@@ -67,10 +68,11 @@ class HoteluserController extends Controller
 
 
 
-        $login_login = Hoteluser::where('name',$request->name)->where('address',$request->address)->where('tel',$request->tel)->get();
+        $login_login = Hoteluser::where('name',$request->name)->where('address',$request->address)->where('tel',$request->tel)->first();
 
         if (isset($login_login)){
             $items = Roomgroup::all();
+            session(['user_id'=>$login_login->id]);
             $request->session()->put('name',$request->name);
             $request->session()->put('address',$request->address);
             $request->session()->put('tel',$request->tel);

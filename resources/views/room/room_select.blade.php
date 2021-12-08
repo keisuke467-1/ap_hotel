@@ -19,8 +19,10 @@
             <td>{{Session::get('check_in')}}</td>
             <td>{{Session::get('check_out')}}</td>
         </tr>
-    @endforeach
-</table>
+        @endforeach
+    </table>
+    <hr>
+    <a href="/reserve/clear">予約を完了する</a>
 @endsection
 
 @section('footer')
