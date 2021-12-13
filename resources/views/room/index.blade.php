@@ -8,6 +8,8 @@
 @endsection
 
 @section('content')
+    @if (! isset($msg))
+        
     <table>
         <tr><th>ID</th><th>部屋の種類</th><th>部屋番号</th><th>宿泊可能人数</th></tr>
         <div>
@@ -42,6 +44,10 @@
             </tr>
         </table>
     </form>
+        
+    @else
+        <p>{{$msg}}</p>
+    @endif
     {{-- <table>
         <tr><th>ID</th><td>{{$roomgroup}}</td></tr>
         <tr><th>宿泊人数</th><td>{{$rooms}}人</td></tr>

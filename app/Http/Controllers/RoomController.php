@@ -33,8 +33,12 @@ class RoomController extends Controller
 
         //予約されている部屋の部屋の番号（101とか）を
         //１個ずつ取り出してる
-        foreach ($reserved_id as $item) {
-            $rooms_data[] = Reserve::find($item->id)->rooms->first()->room_numbers;
+        if (isset($reserved_id)){
+            foreach ($reserved_id as $item) {
+                $rooms_data[] = Reserve::find($item->id)->rooms->first()->room_numbers;
+            }
+        }else{
+            return view('room.index',['msg'=>'空きがありません']);
         }
 
 
