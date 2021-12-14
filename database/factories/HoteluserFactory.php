@@ -9,6 +9,6 @@ $factory->define(App\Hoteluser::class, function (Faker $faker) {
     return [
         'name' => $faker->name(),
         'address' => substr($faker->address(),7),
-        'tel' => $faker->phoneNumber(),
+        'tel' => str_replace('-', '', $faker->phoneNumber()),
     ];
 });

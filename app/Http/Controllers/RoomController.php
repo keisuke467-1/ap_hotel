@@ -33,12 +33,10 @@ class RoomController extends Controller
 
         //予約されている部屋の部屋の番号（101とか）を
         //１個ずつ取り出してる
-        if (isset($reserved_id)){
+        if (isset($hoge)) {
             foreach ($reserved_id as $item) {
                 $rooms_data[] = Reserve::find($item->id)->rooms->first()->room_numbers;
             }
-        }else{
-            return view('room.index',['msg'=>'空きがありません']);
         }
 
 
@@ -52,6 +50,7 @@ class RoomController extends Controller
 
         $rooms_test = Room::whereNotIn('room_numbers', $rooms_data)->SearchCapacity($request->rooms)->where('roomgroups_id', $request->roomgroup)->get();
 
+        //部屋種IDが一緒の'name'をかえす
         $room_name = Roomgroup::where('id',$request->roomgroup)->value('name');
 
         //リクエスト（$request）からsessionを使って、値を保持する

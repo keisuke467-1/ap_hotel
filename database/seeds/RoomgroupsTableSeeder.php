@@ -15,18 +15,21 @@ class RoomgroupsTableSeeder extends Seeder
         $param = [
             'name' => '和室（松）',
             'max_capacity' => '6',
+            'price' => '10000'
         ];
         DB::table('roomgroups')->insert($param);
         
         $param = [
             'name' => '和室（竹）',
             'max_capacity' => '5',
+            'price' => '7000'
         ];
         DB::table('roomgroups')->insert($param);
 
         $param = [
             'name' => '和室（梅）',
             'max_capacity' => '4',
+            'price' => '5000'
         ];
         DB::table('roomgroups')->insert($param);
     }

@@ -9,8 +9,7 @@
 @endsection
 
 @section('content')
-    <p>ログインが完了しました。<br>
-    予約確認でhoteluserのIDを保持していきまひょか</p>
+    <p>ログインが完了しました</p>
     <a href="/roomsearch">
         部屋検索
     </a>

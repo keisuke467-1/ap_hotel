@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class roomgroup extends Model
 {
-    protected $fillable = ['name','max_capacity'];
+    protected $fillable = ['name','max_capacity','price'];
 }
