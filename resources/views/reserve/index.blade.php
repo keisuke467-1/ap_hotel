@@ -5,7 +5,7 @@
 @section('menubar')
     @parent
     【予約一覧】
-    <p>{{session('name')}}様の予約状況
+    <p>【{{Session::get('name')}}】様の予約状況</p>
 @endsection
 
 @section('content')
